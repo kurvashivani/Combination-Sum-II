@@ -1,0 +1,15 @@
+class Solution:
+    def transitionPoint(self, arr):
+        left, right = 0, len(arr) - 1
+        ans = -1
+        
+        while left <= right:
+            mid = (left + right) // 2
+            
+            if arr[mid] == 1:
+                ans = mid
+                right = mid - 1
+            else:
+                left = mid + 1
+        
+        return ans
